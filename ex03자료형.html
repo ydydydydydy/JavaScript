@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 자료형 -  숫자형(Number)
+        // - 정수: 0, 1, 2, -1, -2
+        // - 실수: 1.5, 3.14, 10.5
+
+        let num1 = 10;
+        let num2 = 30;
+        let num3 = 3.14;
+        let num4 = 6.25;
+
+        console.log(num1, num2, num3, num4);
+
+        // 자료형 - 문자열(String)
+        // - 작은 따옴표('') 또는 큰 따옴표("") 표현
+
+        let str1 = 'Hello javaScript'
+        let str2 = 'Happy'
+        let str3 = 'Front'
+
+        console.log(str1, str2, str3);
+
+        // 자료형 - 논리형(Boolean)
+        // - 참(true) 또는 거짓(false) 2가지로 표현
+        let isLogin = true;
+        let isState = false;
+
+        console.log(isLogin, isState);
+
+        // 자료형 - undefined, null
+        // - undefined: 데이터의 자료형, 값 모두 없는 경우 표현
+        // - null: 자료형을 객체로 표현을 하지만 값은 비어있는 상태로 표현, 의도적으로 명시할 때 사용
+
+        let isNull = null;
+        let empty;
+
+        console.log(isNull, empty);
+        console.log(typeof(isNull), typeof(empty));
+
+        // 자료형 - 배열(Array)
+        // - 여러개의 데이터를 하나의 공간에 저장하는 형태 -> []
+        let array = [1, 2, 3, 4];
+        let array2 = [5, 6, 7, 8];
+        
+        console.log(array, array2);
+        
+        // 자료형 - 객체(Object)
+        // - 여러 자료형 데이터를 하나로 묶어 표현
+        let obj = {name : 'Justin', age:20}
+        console.log(obj);
+
+        // 형 변환 - 자동 형 변환
+        console.log(10+'10'); // '1010'
+
+        // 형 변환 - 강제 형 변환
+        // 자료형 -> 숫자형: Number()-숫자로 변환, parseInt()-정수로 변환, parseFloat()-실수로 변환
+        console.log(10 + Number('10'));  // 20
+        console.log(10 + parseInt('10.5'));  // 20
+        console.log(10 + parseFloat('10.5'));  // 20.5
+
+        // 앞에 문자가 오고 뒤에 숫자가 있는 형태
+        console.log(parseInt('$350')); // NaN
+
+        // 자료형 -> 문자열
+        // - String()
+        // - 숫자형데이터.toString(): 숫자 데이터가 담긴 변수에 활용할 수 있다
+        // - 숫자형데이터.toFixed(소수점자릿수)
+
+        let num10 = 15;
+        console.log();
+        let num11 = 3.14;
+        console.log(num11.toFixed());
+
+
+
+
+    </script>
+</body>
+</html>
