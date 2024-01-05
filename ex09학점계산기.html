@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 국어, 영어, 수학 점수를 입력받은 후, 총점과 평균을 출력
+
+        // 학점 범위
+        // 100~96점: A+학점 | 95~91점: A학점 | 90~86점: B+학점 | 85~81: B학점 | 이외 F학점
+        let kor = parseInt(prompt('국어 점수를 입력해주세요'));
+        let eng = parseInt(prompt('영어 점수를 입력해주세요'));
+        let math = parseInt(prompt('수학 점수를 입력해주세요'));
+
+        let total = (kor + eng + math);
+        let avg = total / 3 ;
+        
+        if(avg >= 95) {
+            grade = 'A+';
+        }else if(avg >= 90){
+            grade = 'A';
+        }else if(avg >= 85){
+            grade = 'B+';
+        }else if(avg >= 80){
+            grade = 'B';
+        }else{
+            grade = 'F';
+        }
+        console.log(`평균 ${avg}이고 ${grade}학점입니다.`);
+
+    </script>
+</body>
+</html>
