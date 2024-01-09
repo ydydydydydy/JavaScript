@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Event연결하는 방법1: 인라인 방식
+         HTML요소의 이벤트 속성으로 적용하는 방식
+    -->
+    <button onclick="show()"></button>
+    <p id="p_event">마우스를 올려주세요</p>
+    <script>
+        const show = () =>{
+            alert('클릭이벤트 발생!');
+        }
+
+        // Event 연결하는 방법2: 프로퍼티 방식
+        // - 이벤트를 연결할 HTML요소객체가 필요
+        const p_event = document.getElementById('p_event');
+        console.log('p요소 :' , p_event);
+
+        // 별도의 함수를 정의한 후, 이벤트 속성 값으로 초기화
+        const show2 = () => {
+            alert('이벤트 발생!')
+        }
+        p_event.onmouseover = show2;
+        // 자바스크립트 엔진이 바로 함수를 실행
+
+        // Event 연결하는 방법3: addEventListener();
+        p_event.addEventListener('click', ()=>{
+            alert('이벤트 추가 발생!');
+        })
+
+    </script>
+</body>
+</html>

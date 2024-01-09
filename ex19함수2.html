@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 함수표현식
+        // -> 함수 호이스팅이 발생하지 않는 구조
+        const func = function(){
+            console.log('함수표현식 실행!');
+        }
+
+        func();
+
+        // 화살표 함수
+        const func2 = ()=>{
+            console.log('화살표 함수 실행!');
+        }
+        
+        func2();
+
+        // 화살표 함수 예제
+        const greet = () =>{
+            console.log('안녕하세요');
+        }
+        greet();
+
+        const greet2 = (name) =>{
+            console.log(`안녕하세요 저는 ${name}입니다.`);
+        }
+        greet2('양상권');
+
+        const greet3 = name => `안녕하세요. 저는 ${name}.`;
+        console.log(greet3('박상권'));
+
+    </script>
+</body>
+</html>

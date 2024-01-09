@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let evenSum = 0;
+        let oddSum = 0;
+        let even = '';
+        let odd = '';
+        for(let i=1;i<=20;i++){
+            if(i%2 === 0){
+                even += i + ' ';
+                evenSum += i;
+            }else{
+                odd += i + ' ';
+                oddSum += i;
+            }
+        }
+        console.log(`${even} 의 합: ${evenSum}`);
+        console.log(`${odd} 의 합: ${oddSum}`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="spanTag">아래 버튼을 클릭하면 이 텍스트의 색깔과 크기가 변해요</span>
+    <br>
+    <button onclick="clickFunc()">이 버튼 클릭!</button>
+
+    <script>
+        let spanTag = document.getElementById('spanTag');
+        console.log('get', spanTag);
+
+        // DOM 스타일 제어
+        // 요소.style.속성 = 값
+
+        // queryselector : CSS 선택자로 요소 검색
+        // queryselectorAll : CSS 선택자로 모든 요소 검색
+        spanTag = document.querySelector('span');
+        console.log('query', spanTag);
+
+        const clickFunc = () =>{
+            spanTag.style.color = 'tomato';
+            spanTag.style.fontSize = '25px';
+            spanTag.style.fontWeight = '900';
+        }
+        
+    </script>
+</body>
+</html>

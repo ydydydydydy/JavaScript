@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="tit">오늘<span><strong>날씨</strong></span>가 춥습니다.</h1>
+    <script>
+        // HTML요소객체 접근
+        const tit = document.getElementById('tit')
+        console.log('h1요소객체 접근: '+tit);
+
+        console.log(tit.innerText);
+        console.log(tit.innerHTML);
+
+        // innerText속성 - 요소의 컨텐츠를 접근/변경 변경할 때 태그와 문자열 -> 문자열로 반영
+        // tit.innerText = '<a href="#">DOM 배우는 중</a>';
+        tit.innerHTML = '<a href="#">DOM 배우는 중</a>';
+
+    </script>
+</body>
+</html>
