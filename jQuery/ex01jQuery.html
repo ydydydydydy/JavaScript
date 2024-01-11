@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>jQuery Start</p>
+    <button id="textBtn">TEXT</button>
+    <button id="htmlBtn">HTML</button>
+
+    <script>
+        // jQuery / $
+        // 제이쿼리를 의미하면서 제이쿼리에 접근 할 수 있는 식별자!
+        // $(요소명|선택자).동작메소드()
+
+        // 1. p태그에 접근
+        let valJS = document.querySelector('p');
+        console.log(valJS);
+        let valJQ = $('p');
+        console.log(valJQ);
+
+        // JS
+        // document.querySelector('#textBtn').addEventListener('click',()=>{})
+
+        // 2. text 버튼 클릭 시 내용만
+        // JS -> .innerText
+        // jQuery -> .text()
+        $('#textBtn').click(()=>{
+            $('p').text('내용을 변경하겠습니다.');
+        })
+
+        // 3. html 버튼 클릭 시 태그까지
+        // JS -> .innerGTML
+        // jQuery -> .html()
+        $('#htmlBtn').click(()=>{
+            $('p').html('<a href="#">a태그로 변경</a>');
+        })
+
+    </script>
+</body>
+</html>

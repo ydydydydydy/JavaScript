@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 논리연산자
+        // 1.NOT연산자: 논리값 또는 논리식 앞에 '!'를 표기 -> 기존 논리값을 뒤집는 역할
+        //              !true -> false  /  !false -> true
+    
+        // 2.AND연산자: 두 논리값 또는 식이 모두 true인 경우에 최종값을 true로 반환하는 연산자
+
+        // 3.OR연산자: 두 논리값 또는 식이 하나만 true인 경우에 최종값을 true로 반환하는 연산자
+
+        // 4.조건(삼항)연산자 : 조건식? 실행문장1 : 실행문장2
+        //                     - true일 경우: 실행문장1
+        //                     - false일 경우: 실행문장2
+
+
+        // 삼항연산자 예제/숫자를 입력받은 후 홀수인지 짝수인지 판별
+
+            let input = parseInt(prompt('숫자를 입력해주세요!'))
+            //console.log(input % 2 === 0 ? input + '는 짝수입니다.' : input + '는 홀수입니다.');
+
+
+        // 템플릿 문자열: 문자열 안에 변수를 사용할 수 있는 문법
+        // - 백틱('')
+        // - 백틱 안에 변수를 사용해야 할 경우 '${변수}' 표기
+            console.log(input % 2 === 0 ? `${input}는 짝수입니다.` : `${input}는 홀수입니다.`);
+    </script>
+</body>
+</html>

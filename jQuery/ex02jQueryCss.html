@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>jQuery 활용해보기</h1>
+    <h2>jQuery Style</h2>
+    <button id="h1">h1change</button>
+    <button id="h2">h2change</button>
+    <script>
+        $('#h1').click(()=>{
+            $('h1').css('color','red');
+
+            // 1. 한줄씩 입력
+            // $('h2').css('color', 'salmon');
+            // $('h2').css('background-color', 'lightgrey');
+            // $('h2').css('font-style', 'italic');
+
+            // 2. chain 방식 입력
+            // jQuery의 메소드는 메소드가 제어하는 대상을 리턴
+            // -> 메소드를 계속해서 붙여넣는 chain 방식 사용 가능
+            // $('h1').css('color', 'salmon')
+            //        .css('background-color', 'lightgrey')
+            //        .css('font-style', 'italic');
+        })
+
+        // 스타일 제어
+        // JS -> .style
+        // JQ -> .css()
+
+        $('#h2').click(()=>{
+            $('h2').css({
+                'color':'salmon',
+                'background-color':'lightgray',
+                'font-size':'italic'
+            })
+        })
+
+    </script>
+</body>
+</html>

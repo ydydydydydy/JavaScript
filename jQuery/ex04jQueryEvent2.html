@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 100px;
+            height: 60px;
+            margin: 5px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 2rem;
+        }
+
+        .click {
+            background-color: lightpink;
+        }
+
+        .on {
+            background-color: lightblue;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <button class="click">click</button>
+    <button class="on">on</button>
+    <script>
+        // click vs on
+        // 동적 이벤트 바인딩 차이
+        // click : 최초에 페이지를 로딩할 때 선언되어있던 요소에 이벤트 등록
+        // on : 동적으로 추가된 태그에 이벤트 추가
+        $('.click').click(()=>{
+            // 초기에 존재하는 요소에만 이벤트가 등록된다
+            // 직접 바인딩하는 경우 : 초기에 존재하는 요소에 이벤트 처리를 간편하게 할 수 있따.
+            $('body').append('<button class="click">click</button>')
+            // $(A).append(B) : B를 A요소 마지막 위치에 추가하는 메소드
+        })
+
+        $(document).on('click','.on',()=>{
+            $('body').append('<button class="on">on</button>')
+        })
+        // ".on" 부분을 해당 이벤트를 주고싶은 요소의 id나 class값을 써주면 된다.
+        // document를 거쳐가는 경우 : 동적으로 추가되는 요소에도 이벤트 처리할 수 있다.
+
+    </script>
+</body>
+</html>

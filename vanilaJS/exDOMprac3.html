@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #redBox{
+            background-color: red;
+        }
+        #blueBox{
+            background-color: blue;
+
+        }
+        #greenBox{
+            background-color: green;
+        }
+        #grayBox{
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="redBox"></div>
+    <div id="blueBox"></div>
+    <div id="greenBox"></div>
+    <div id="grayBox"></div>
+    <button onclick="margin()">이동하기!</button>
+    <button onclick="radius()">둥글게!</button>
+
+    <script>
+        let red = document.querySelector('#redBox');
+        let blue = document.querySelector('#blueBox')
+        let green = document.querySelector('#greenBox')
+        let gray = document.querySelector('#grayBox')
+
+        function margin(){
+            blue.style.marginLeft = '100px';
+            green.style.marginLeft = '200px';
+            gray.style.marginLeft = '300px';
+        }
+
+        let divList = document.querySelectorAll('div');
+        for(let i=0;i<divList.length;i++){
+            console.log(divList[i]);
+        }
+
+        const radius = () => {
+
+            // for(let i of divList){
+            //     i.style.borderTopRightRadius = '50%'
+            //     i.style.borderBottomLeftRadius = '50%'
+            // }
+
+            // for of 문은 js에서 반복 가능한 객체를 순회 할때 사용하는 반복문 -> 배열
+
+            divList.forEach((element)=>{
+                element.style.borderTopRightRadius = '50%'
+                element.style.borderBottomLeftRadius = '50%'
+            })
+            // forEach() 메소드는 파라미터와 함께 배열의 각 요소, 콜백 함수를 전달한다.
+        }
+    </script>
+</body>
+</html>

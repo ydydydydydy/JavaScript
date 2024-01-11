@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <img src="https://i.ytimg.com/vi/rfmIwaiLDE8/maxresdefault.jpg"
+    width="300px" id="imgId" class="imgClass">
+    <br>
+    <button onclick="imgChange()">이미지 변경</button>
+    <script>
+        // <img> 태그의 src 속성의 이미지 소스를 명시
+        let src1 = "https://i.ytimg.com/vi/rfmIwaiLDE8/maxresdefault.jpg";
+        let src2 = "https://i.ytimg.com/vi/tXpd7pUj-0E/maxresdefault.jpg";
+
+        const imgChange = () => {
+            // 이미지요소 가져오고
+            let img = document.getElementById('imgId');
+            img = document.getElementsByClassName('imgClass')[0];
+            img = document.querySelector('img');
+            img = document.querySelector('#imgId');
+            img = document.querySelector('.imgClass');
+            // src속성을 비교해서
+            if(img.src === src1){
+                // src를 2번으로
+                img.src = src2;
+            }else{
+                img.src = src1;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button id="btn_event">이벤트객체용 버튼</button>
+    <script>
+        // 이벤트 객체
+        // 이벤트가 발생하는 주체, 종류 등을 알 수 있다.
+        // 매개변수에 event, e 객체 전달
+        // 1. target = 발생하는 주체
+        // 2. type = 이벤트의 종류
+
+        let btn_event = document.getElementById('btn_event');
+
+        btn_event.onclick = (event) => {
+            console.log(event);
+            console.log(event.target);
+            console.log(event.target.innerText);
+        }
+    </script>
+</body>
+</html>

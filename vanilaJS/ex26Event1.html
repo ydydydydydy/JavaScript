@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #divTag {
+            border: 2px;
+            border: solid lightblue;
+            width: 100px;
+            height: 20px;
+            background-color: antiquewhite;
+            text-align: center;
+            line-height: 19px;
+        }
+    </style>
+</head>
+<body>
+    <div id="divTag">실습문제</div>
+    <form name="frm" onsubmit="return false;">
+        <p><input type="text" name="num1"></p>
+        <p><input type="text" name="num2"></p>
+
+        <p><button id="btn">연산결과</button></p>
+        <!-- form태그 안에 button태그를 정의하면 클릭 시, submit기능이 동작
+            이를 해결하기위해서 onsubmit 이벤트를 이용해서 기능을 막아야한다.
+            form 태그 안에 접근하는 방법 여러가지는 우리는 name으로 접근
+         -->
+    </form>
+    <div>연산결과 : <span id="result">0</span></div>
+    <script>
+        // HTML 요소객체 접근하기
+        // form의 name값으로 접근하여 input의 값 가져오기
+        const num1 = document.frm.num1;
+        const num2 = document.frm.num2;
+        const btn = document.getElementById('btn');
+        const result = document.getElementById('result');
+
+        // 연산결과 버튼에 클릭 이벤트 연결
+        const op_result = () => {
+            result.innerText = parseInt(num1.value) + parseInt(num2.value);
+        }
+        // 함수 구현 후 이벤트 속성에 함수명 대입
+        btn.addEventListener('click',op_result);
+
+        btn.addEventListener('dblclick', ()=>{
+            alert(result.innerText);
+        });
+    </script>
+</body>
+</html>

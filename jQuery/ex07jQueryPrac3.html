@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>컴퓨터의 선택 : <span class="com"></span></p>
+    <p>나의 선택 : <span class="user"></span></p>
+    <p>게임 결과 : <span class="result"></span></p>
+    <button>가위</button>
+    <button>바위</button>
+    <button>보</button>
+
+    <script>
+        const btnList = ['가위','바위','보'];
+
+        $(document).on('click','button',(e)=>{
+            // (e)는 이벤트 객체가 발생했을 때 해당 이벤트에 대한 정보를 담고 있는 객체
+            console.log($(e.target).text());
+
+            $('user').text(e.target.innerText);
+        })
+    </script>
+</body>
+</html>

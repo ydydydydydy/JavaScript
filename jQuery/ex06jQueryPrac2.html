@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>0</p>
+    <button class="plusNum">+1</button>
+    <button class="minusNum">-1</button>
+    <button class="resetNum">reset</button>
+
+    <script>
+        let num = 0;
+        $(document).on('click','.plusNum',()=>{
+            num++;
+            $('p').text(num);
+        })
+        $(document).on('click','.minusNum',()=>{
+            if(num > 0){
+                num--;
+                $('p').text(num);
+            }
+        })
+        $(document).on('click','.resetNum',()=>{
+            num = 0;
+            $('p').text(num);
+        })
+    </script>
+</body>
+</html>

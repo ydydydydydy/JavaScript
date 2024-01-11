@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1>랜덤수 맞추기</h1>
+  <input />
+  <button>제출</button>
+  <h1 id="test">시도횟수 : </h1>
+
+  <script>
+    // 0 < Math.random() < 1 0.9XXX
+    let ranNum = parseInt(Math.random()*10)+1;
+    let cnt = 0;
+    // val()
+
+    $('button').on('click',function (){
+        num = $('input').val();
+        cnt += 1;
+
+        $('#test').text('시도횟수 : '+cnt);
+        if(ranNum == num){
+            alert('정답');
+        }else if(ranNum > num){
+            alert('높은 수 입력');
+        }else{
+            alert('낮은 수 입력');
+        }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>🌹Event 지정</h1>
+    <h2>이벤트 확인1</h2>
+    <h3>이벤트 확인2</h3>
+    <p>이벤트 확인3</p>
+    <button>change!</button>
+
+    <script>
+        $('button').on('click',()=>{
+            $('h1').css('color','blue');
+        })
+
+        $('h1').on('mouseover',()=>{
+            $('h1').css('color','red');
+        })
+
+        $('h1').on('mouseout',()=>{
+            $('h1').css('color','black');
+        })
+
+        $('h2, h3').on('click',function (){
+            $(this).css('color','yellow');
+        })
+
+        // 화살표 함수에서 this 사용 x
+
+    </script>
+</body>
+</html>

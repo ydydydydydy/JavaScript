@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="num">0</p>
+    <button onclick="increase()">증가</button>
+    <button onclick="decrease()">감소</button>
+
+    <script>
+        // 1. 숫자정보를 가진 p요소객체를 접근
+        const num = document.getElementById('num');
+
+        // 버튼 클릭 시, 숫자를 카운팅하는 프로그램 구현
+        increase = () => {
+            // 2. p요소객체의 콘텐츠(내용)을 +1을 적용하여 초기화
+            num.innerText = parseInt(num.innerText) + 1;
+        }
+
+        decrease = () => {
+            num.innerText = parseInt(num.innerText) === 0 ? 0 : num.innerText-1;
+        }
+    </script>
+</body>
+</html>
