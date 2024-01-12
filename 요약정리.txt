@@ -1,0 +1,90 @@
+** HTML
+- Hyper Text => 현재 문서에서 다른 문서로 즉시 접근할 수 있는 텍스트
+관련 태그? <a>, href 속성에 url 기입
+Markup Language => 태그(</>) 등을 이용해 문서나 데이터의 구조를 표시
+
+
+** HTML 요소 구조
+<p>html</p> => 요소
+<p> => 시작태그
+html => 내용
+</p> => 끝태그
+
+
+** 기본선택자  및 스타일 적용 우선순위
+<span id="span-id" class="span-class">css</span>
+전체선택자(0) => *
+태그선택자(1) => span(태그 이름)
+아이디선택자(100) => #span-id
+- body 태그 내 하나의 값만 존재
+- 한 페이지에 한번만 들어가는 정보(로고 등)의 스타일 정의 시 사용
+클래스선택자(10) => .span-class
+- 여러 태그에 동시 적용 가능, 하나의 태그에 여러 클래스 적용 가능
+- 반복 사용 스타일 정의 시 사용
+!important => 최우선 스타일 적용 속성값
+
+
+** 계층선택자
+자손선택자 => 띄어쓰기
+자식선택자 => >
+근접후행선택자 => +
+후행선택자 => ~
+
+
+** block vs. inline
+block
+- 한 줄 전체 너비를 차지
+- div, p, h1~6, ...
+inline
+- 내용(컨텐츠)만큼 너비를 차지
+- span, a, img, ...
+
+
+** box model
+- margin => 요소 테두리 바깥 여백
+- padding => 요소 테두리 안쪽 여백
+
+
+** flex
+- flex-direction => 메인축 방향 지정
+- flex-wrap => 아이템 줄바꿈 지정
+- justify-content => 아이템 메인축 정렬 지정
+- align-items => 아이템 교차축 정렬 지정
+
+
+** 변수 : 데이터를 저장하기 위해 할당 받은 공간
+- var => 재선언, 재할당 모두 가능
+- let => 재선언 불가능, 재할당 가능
+- const => 재선언, 재할당 모두 불가능
+
+
+** 배열 : 데이터 묶음
+- 배열 선언
+let array = [];
+let array = new Array();
+- 배열 생성
+array = [1,2,3];
+array = new Array(1,2,3);
+- 데이터 접근 => index / array[index]
+
+
+** 함수 : 소스 코드 묶음
+- 함수 선언문
+function func (){};
+- 함수 표현식
+const func = function(){};
+- 화살표 함수
+const func = ()=>{};
+- 함수 호출
+func();
+
+
+** 객체 : 속성 묶음
+- 객체 구조
+key+value
+- 객체 선언
+let object = {};
+- 객체 생성
+object.key1 = value1;
+let object = {key1:value1};
+- 데이터 접근 => key / obejct.key

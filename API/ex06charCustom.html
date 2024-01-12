@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <canvas id="myChart" width="500px" height="500px"></canvas>
+        <!-- canvas 요소 크기 기본값은 너비 300px, 높이 150px -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        let data1 = Number(prompt('월요일'));
+        let data2 = Number(prompt('수요일'));
+        let data3 = Number(prompt('금요일'));
+        
+        const data = {
+            labels : ['월요일', '수요일', '금요일'],
+            datasets : [{
+                label : '주4일제 휴무일 선호도 조사',
+                data : [data1, data2, data3],
+                backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+                ]
+            }]
+        }
+        
+        const config = {
+            type: 'doughnut',
+            data: data,
+            options : {
+                reponsive : false
+            }
+        }
+        new Chart(ctx, config)
+    </script>
+</body>
+</html>
