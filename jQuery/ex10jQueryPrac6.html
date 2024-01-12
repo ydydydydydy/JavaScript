@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <img src="/imgprac/Chico.png" alt="imgprac">
+    <br>
+    <span>좋아요</span>
+    <button class="likeBtn">🤍</button>
+    <span>0</span>
+    <br><br>
+    <script>
+        // 속성 추가, 제거 관련
+        // attr(추가할속성, 속성의값) : 속성 추가 메소드
+        // removeAttr(제거할속성) : 속성 제거 메소드
+        // removeClass(클래스이름) : 클래스 속성 제거 메소드
+        // addClass(클래스이름) : 추가할 클래스 속성 메소드
+        // $(A).prepend(B) : B를 A요소 첫번째 위치에 추가 메소드
+        // $(A).append(B) : B를 A요소 마지막 위치에 추가 메소드
+        // 부모 관련
+        // parent() : 가장 가까운 부모 요소 선택
+        // parents() : 모든 부모 요소 선택
+        // closest(원하는요소) : 모든 부모 요소 대상 원하는 요소 접근 가능
+        
+        // 1. 좋아요 버튼 클릭시
+        // 0 > 1
+        // 문서에 접근한 다음에 이벤트 실행시킨다, 클래스값을 통해 요소 지정
+        // 메소드를 사용해서 속성 추가
+        $(document).on('click','button[class=likeBtn]', function(){
+            $(this).text('💙')
+            $('.likeBtn+span').text('1개')
+            $(this).attr('class', 'dislikeBtn');
+            //$(this).removeClass('likeBtn').addClass('dislikeBtn');
+        })
+            
+        // 2. 좋아요 취소 버튼 클릭시
+        // 1 > 0
+        // 문서에 접근한 다음 이벤트 실행, 클래스값을 통해서 지정
+        $(document).on('click', 'button[class=dislikeBtn]', (e)=>{
+            $(e.target).text('🤍')
+            $('.dislikeBtn+span').text('0개')
+            $(e.target).attr('class', 'likeBtn');
+        })
+
+
+
+    </script>
+</body>
+</html>

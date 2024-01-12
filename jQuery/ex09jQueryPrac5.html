@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    
+    <input type="text" id="taskInput" placeholder="할 일을 입력하세요">
+    <button id="addTaskBtn">추가</button>
+
+    <ul id="taskList">
+        <!-- 할 일 목록이 여기에 추가될 것입니다 -->
+    </ul>
+
+    <script>
+        // 할 일 추가 버튼 클릭시
+        $(document).on('click', '#addTaskBtn', () => {
+            const taskInput = $('#taskInput').val();
+            
+            if (taskInput !== '') {
+                $('#taskList').append(`<li>${taskInput} <button class='removeBtn'>삭제</button></li>`);
+                $('#taskInput').val('');
+            } else {
+                alert('할 일을 입력하세요');
+            }
+        });
+
+        // 완료하지 못했을 때
+        $(document).on('click', '#taskList>li', function(){
+            $(this).text('미완료');
+        });
+
+        // 삭제 버튼 클릭시
+        $(document).on('click', '.removeBtn', function(){
+            $(this).parent().remove();
+        });
+    </script>
+</body>
+</html>

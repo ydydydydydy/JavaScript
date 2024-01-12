@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="number" id="heightInput" placeholder="키 (cm)">
+    <input type="number" id="weightInput" placeholder="몸무게 (kg)">
+    <button id="calculateBtn">계산하기</button>
+    <p id="result">BMI 결과 </p>
+
+    <script>
+        // 계산하기 버튼을 눌렀을 때 이벤트 실행
+        $('#calculateBtn').on('click', () => {
+            // 키와 몸무게를 넣은 값을 가져와서 변수에 담아보자
+            const height = $('#heightInput').val();
+            const weight = $('#weightInput').val();
+
+            // 조건문을 통해 키와 몸무게가 입력됐을 때 bmi 구하는 계산을 시작
+            if (height !== '' && weight !== '') {
+                const heightInMeters = height / 100;
+                const bmi = weight / (heightInMeters * heightInMeters);
+
+                // 다중if문을 사용하여 조건을 걸어 결과를 출력
+                // BMI 범주에 따라 텍스트 표시
+                let resultText = 'BMI 결과 ';
+                if (bmi < 18.5) {
+                    resultText += '저체중';
+                } else if (bmi >= 18.5 && bmi < 25) {
+                    resultText += '정상';
+                } else if (bmi >= 25 && bmi < 30) {
+                    resultText += '과체중';
+                } else if (bmi >= 30 && bmi < 35) {
+                    resultText += '비만';
+                } else {
+                    resultText += '고도비만';
+                }
+
+                $('#result').text(`${bmi.toFixed(2)}는 ${resultText} 입니다.`);
+            } else {
+                alert('키와 몸무게를 입력하세요.');
+            }
+        });
+    </script>
+</body>
+</html>

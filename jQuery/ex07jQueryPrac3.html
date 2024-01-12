@@ -20,7 +20,57 @@
             // (e)는 이벤트 객체가 발생했을 때 해당 이벤트에 대한 정보를 담고 있는 객체
             console.log($(e.target).text());
 
-            $('user').text(e.target.innerText);
+            // STEP 1: 버튼 클릭시 사용자 선택 텍스트 표시하기
+            // 변수에 담아서 사용해보자
+            const userChoice = $(e.target).text()
+            $('.user').text(userChoice);
+
+            // STEP 2: 0~2까지의 난수 만들기 0<Math.random()<1
+            // 변수에 담아서 사용
+            const ranNum = parseInt(Math.random() * 3);
+            // STEP 3: 컴퓨터의 선택 텍스트 표시하기
+            // 변수에 담아서 사용
+            const comChoice = btnList[ranNum];
+            $('.com').text(comChoice);
+
+            // STEP 4: STEP1에서 사용한 텍스트를 switch문을 통해 값을 할당
+            // 인덱스를 비교하기 위해 let userNum = 0;
+            // 클릭했을 때 받았던 값을 switch문 안에 있는 값에 대입
+            // ex) case '가위' : userNum = 0; break;
+            let userNum = 0;
+            switch($(e.target).text()){
+                case '가위' : userNum = 0; break;
+                case '바위' : userNum = 1; break;
+                case '보' : userNum = 2; break;
+            }
+
+            // STEP 5: 조건문을 사용하여 내가 낸 수(변수)와 컴퓨터 수(변수) 비교
+            let result = '';
+
+            if (userNum == ranNum){
+                result ='무승부'
+            }else if (userNum == 0){
+                if (ranNum == 1){
+                    result = '컴퓨터 승리'
+                }else{
+                    result = '나의 승리'
+                }
+            } else if (userNum == 1) {
+                if (ranNum == 2) {
+                    result = '컴퓨터 승리';
+                }else{
+                    result = '나의 승리';
+                }
+            } else if (userNum == 2){
+                if (ranNum == 0){
+                    result = '컴퓨터 승리';
+                }else{
+                    result = '나의 승리';
+                }
+            }
+
+            // STEP 6: 결과를 화면에 출력
+            $('.result').text(result);
         })
     </script>
 </body>
